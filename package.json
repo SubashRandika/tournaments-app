@@ -1,31 +1,42 @@
 {
-  "name": "tournaments-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "tournaments-app",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@material-ui/core": "^4.0.1",
+		"@material-ui/icons": "^4.0.1",
+		"axios": "^0.19.0",
+		"dateformat": "^3.0.3",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"react-flag-icon-css": "^1.0.25",
+		"react-scripts": "3.0.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"mock:server": "json-server -w mock-api/db.json -c src/configurations/json-server.json",
+		"start:app": "concurrently --kill-others \"npm run mock:server\" \"npm run start\"",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"concurrently": "^4.1.0",
+		"json-server": "^0.15.0"
+	}
 }
